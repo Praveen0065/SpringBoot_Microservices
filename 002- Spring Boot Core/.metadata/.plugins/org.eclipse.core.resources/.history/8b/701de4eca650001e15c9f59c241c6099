@@ -1,0 +1,22 @@
+my:
+  app:    
+     host :    smtp.hamil.com
+     port : 882
+     username : sample
+     password : praveen
+     
+     protocols:
+     - SMTP
+     - SMTPS
+     - SMTP2
+     
+     headers:
+        modified : true
+        version : 3.2A
+        content : JSON
+        
+     cob:
+     provider : GoDaddy
+     expExist : INACTIVE
+       
+       

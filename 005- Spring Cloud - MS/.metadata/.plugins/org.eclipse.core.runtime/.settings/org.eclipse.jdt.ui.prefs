@@ -1,0 +1,10 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="org.springframework.http.HttpEntity"><rhs name\="org.springframework.http.ResponseEntity"/><rhs name\="org.springframework.http.HttpEntity"/></lhs><lhs name\="org.springframework.http.ResponseEntity"><rhs name\="org.springframework.http.ResponseEntity"/></lhs><lhs name\="org.springframework.web.client.RestOperations"><rhs name\="org.springframework.web.client.RestTemplate"/></lhs><lhs name\="org.springframework.http.client.support.InterceptingHttpAccessor"><rhs name\="org.springframework.web.client.RestTemplate"/></lhs><lhs name\="org.springframework.http.client.support.HttpAccessor"><rhs name\="org.springframework.web.client.RestTemplate"/></lhs><lhs name\="org.springframework.web.client.RestTemplate"><rhs name\="org.springframework.web.client.RestTemplate"/></lhs><lhs name\="com.app.bean3.Cart"><rhs name\="com.app.bean3.Cart"/></lhs><lhs name\="org.springframework.util.MultiValueMap"><rhs name\="org.springframework.http.HttpHeaders"/></lhs><lhs name\="java.util.Map"><rhs name\="org.springframework.http.HttpHeaders"/></lhs><lhs name\="org.springframework.http.HttpHeaders"><rhs name\="org.springframework.http.HttpHeaders"/></lhs><lhs name\="com.app.entity1.StockInfo"><rhs name\="com.app.entity1.StockInfo"/></lhs><lhs name\="com.fasterxml.jackson.core.Versioned"><rhs name\="com.fasterxml.jackson.databind.ObjectMapper"/></lhs><lhs name\="com.fasterxml.jackson.core.ObjectCodec"><rhs name\="com.fasterxml.jackson.databind.ObjectMapper"/></lhs><lhs name\="com.fasterxml.jackson.core.TreeCodec"><rhs name\="com.fasterxml.jackson.databind.ObjectMapper"/></lhs><lhs name\="com.fasterxml.jackson.databind.ObjectMapper"><rhs name\="com.fasterxml.jackson.databind.ObjectMapper"/></lhs></history>
+content_assist_number_of_computers=15
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=23
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

@@ -1,0 +1,5 @@
+package com.app.handler;
+
+public class MycustomExceptionHandler {
+
+}

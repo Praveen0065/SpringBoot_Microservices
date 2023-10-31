@@ -1,0 +1,26 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<title> WELCOME COLLECTION OF BOOKS </title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	</head>
+	<body>
+		<h3>WELCOME COLLECTION OF BOOKS</h3>
+		
+	    <table border="1">
+			<tr>
+				<th>ID </th>
+				<th>NAME </th>
+				<th>AUTHOR </th>
+				<th>COST </th>
+     		</tr>		
+     		<tr th:each="ob:${bobList}">
+				 <td th:text="${ob.bookId}"></td>
+				 <td th:text="${ob.bookName}"></td>
+				 <td th:text="${ob.bookAuth}"></td>
+			     <td th:text="${ob.bookCost}"></td>
+				 
+			 </tr>
+		</table>			
+	</body>
+	
+</html>

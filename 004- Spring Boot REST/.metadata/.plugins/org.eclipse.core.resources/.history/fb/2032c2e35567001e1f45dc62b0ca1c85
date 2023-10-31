@@ -1,0 +1,19 @@
+package com.app.handler;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import com.app.exception.StudentNotFoundException;
+
+@RestControllerAdvice
+public class MycustomExceptionHandler {
+	
+	@ExceptionHandler(StudentNotFoundException.class)
+	public ResponseEntity<String> showStudentNotFoundError(
+			StudentNotFoundException snfe
+			){
+		return null;
+	}
+
+}

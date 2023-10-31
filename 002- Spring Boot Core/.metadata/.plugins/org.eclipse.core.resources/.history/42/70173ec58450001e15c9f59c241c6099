@@ -1,0 +1,17 @@
+package com.app;
+
+public class DataBaseConfg1 {
+	
+	private String driver;
+	private String url;
+	private String user;
+	private String password;
+	
+	
+	@Override
+	public String toString() {
+		return "DataBaseConfg1 [driver=" + driver + ", url=" + url + ", user=" + user + ", password=" + password + "]";
+	}
+	
+	
+}

@@ -1,0 +1,55 @@
+package com.app.runner3;
+
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.app.entity1.Product;
+import com.app.repository2.ProductRepository;
+
+@Component
+public class TestOperationRunner implements CommandLineRunner {
+
+	@Autowired
+	private ProductRepository repo;
+	
+	
+	@Override
+	public void run(String... args) throws Exception {
+		
+		Product p1 = new Product(11,"P2",300.1);
+		Product p2 = new Product(12,"P3",400.1);
+		Product p3 = new Product(13,"P4",500.1);
+		
+		Product p4 = new Product(14,"P2",300.1);
+		Product p5 = new Product(15,"P3",400.1);
+		Product p6 = new Product(16,"P4",500.1);
+		
+		/*repo.save(p1);
+		repo.save(p2);
+		repo.save(p3);*/
+		repo.saveAll(Arrays.asList(p4,p5,p6));
+		
+	
+	  Iterable<Product> data = repo.findAll();
+	  //JDK 1.5 forEach Loop
+	  for(Product pob : data) {
+		  System.out.println(pob);
+	  }
+	  
+	   System.out.println("--------------");
+		//JDK 1.8 Default method + Lambda Expression
+		data.forEach(ob-> System.out.println(ob));
+		
+		System.out.println("************");
+		//JDK 1.8 Default method + Method References
+		data.forEach(System.out::println);
+		
+		System.out.println("-------------");
+		System.out.println(repo.existsById(11));
+		System.out.println(repo.existsById(55));
+	}
+
+}

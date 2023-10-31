@@ -1,0 +1,24 @@
+package com.app;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Process1 {
+	
+	//@Value("#{ 2 + 3 }")
+    //@Value("#{ 'Hello ABC'.length()} ")
+	//@Value("#{ new java.util.Random().nextInt }")
+	//@Value("#{ java.lang.Math.abs(-9)}")
+	//@Value("#{'Hello'.length() > 0 ? 55:44}")
+	  @Value("#{ ModelData4.model.toLowerCase() }")
+	  private String code;
+
+	@Override
+	public String toString() {
+		return "Process1 [code=" + code + "]";
+	}
+	
+	
+
+}

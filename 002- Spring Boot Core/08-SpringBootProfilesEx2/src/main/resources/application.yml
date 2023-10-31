@@ -1,0 +1,6 @@
+my:
+  db:
+    driver: Oracle
+    pwd: raghu
+    url: jdbc-oracle
+    user: praveen

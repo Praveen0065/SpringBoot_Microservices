@@ -1,0 +1,20 @@
+package com.app;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Format {
+	
+	private IProcess pob;
+	
+	public void printFormat() {
+		pob.getProcesCode();
+		System.out.println("FORM FORMAT");
+	}
+
+	@Override
+	public String toString() {
+		return "Format [pob=" + pob + "]";
+	}
+
+}

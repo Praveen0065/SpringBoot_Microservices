@@ -1,0 +1,34 @@
+package com.app.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.entity.User;
+import com.app.repository.UserRepository;
+
+@Service
+public class UserService {
+	
+    @Autowired
+	private UserRepository repo;
+    
+    public Integer saveUser(User user) {
+      return repo.save(user).getId();
+    }
+    
+    public User getOneUser(Integer id) {
+    	return repo.findById(id).get();
+    }
+    
+    public void saveUse(Integer userid,User user) {
+    	User userDb = repo.findById(userid).get();
+    	userDb.setName(user.getName());
+		userDb.setRole(user.getRole());
+		repo.save(userDb);
+    }
+    
+    public void deleteUser(Integer userId) {
+		repo.deleteById(userId);
+	}
+
+}

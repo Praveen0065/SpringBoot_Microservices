@@ -1,0 +1,24 @@
+package com.app.entity;
+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "STUDENT_TAB")
+public class Student {
+	
+	@Id
+	@GeneratedValue
+	private Integer stdId;
+	private String stdName;
+	private String stdGen;
+	private String stdMail;
+	private String stdAddr;
+
+}

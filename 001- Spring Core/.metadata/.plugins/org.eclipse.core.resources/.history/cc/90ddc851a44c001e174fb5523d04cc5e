@@ -1,0 +1,20 @@
+package com.app.service;
+
+public class ExcelExportService {
+	
+	private String fileName;
+	private String mode;
+	
+	public void setUp() {
+		//lot of code..
+		System.out.println("from inti method");
+	}
+	
+	public void clean() {
+		//some code
+		System.out.println("from destroy method");
+	}
+	
+	
+
+}

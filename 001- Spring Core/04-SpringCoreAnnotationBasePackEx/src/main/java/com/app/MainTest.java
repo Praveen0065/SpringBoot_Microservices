@@ -1,0 +1,18 @@
+package com.app;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class MainTest {
+	public static void main(String[] args) {
+		
+		AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(MyAppConfig.class);
+		//ac.scan("com.app");
+		//ac.refresh();
+		Object ob1 = ac.getBean("eobj");
+		Object ob2 = ac.getBean("cob");
+		System.out.println(ob1);
+		System.out.println(ob2);
+		
+	}
+
+}

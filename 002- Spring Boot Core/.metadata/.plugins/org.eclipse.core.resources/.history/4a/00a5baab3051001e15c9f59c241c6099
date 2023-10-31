@@ -1,0 +1,21 @@
+package com.app;
+
+import org.springframework.stereotype.Component;
+
+import lombok.Setter;
+import lombok.ToString;
+
+@Component
+@Setter
+@ToString
+public class Process1 {
+	
+	private String code;
+	private int port;
+	
+
+	
+
+	
+
+}

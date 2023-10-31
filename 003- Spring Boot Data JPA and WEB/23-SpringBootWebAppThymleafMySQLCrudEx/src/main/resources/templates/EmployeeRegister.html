@@ -1,0 +1,44 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<title> WELCOME TO EMPLOYEE REGISTER PAGE</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+
+	</head>
+	<body>
+		<div class="container">
+               <div class="card">
+				   
+                 <div class="card-header bg-primary text-white text-center">
+                  <h2>EMPLOYEE REGISTER PAGE </h2>
+                 </div>
+                 
+             <div class="card-body">
+				 <form th:action="@{/employee/save}" method="POST">		     
+			   NAME <input type="text" name="empName" class="form-control" />
+			   GENDER <br/>
+               <input type="radio" name="empGen" value="Male"/> Male
+                <input type="radio" name="empGen" value="Female"/> Female <br/>		   			   
+			   SALARY  <input type="text" name="empSal"class ="form-control" />
+			    DOJ <input type="date" name="empDate" class="form-control" />
+
+			   DEPART  <select name ="empDept" class ="form-control" >
+				       <option value="DEV"> DEV </option>
+				       <option value="QA"> QA </option>
+				       <option value="BA"> BA </option>
+			       </select>  
+			       
+			  ADDRESS
+               <textarea name="empAddr" class="form-control"></textarea>     
+             <button type="submit" class="btn btn-success">Create</button>
+			
+		 </form>
+         </div>
+		    <div th:if="${Message}" class="card-footer bg-success text-white text-center">
+					<b>[[${Message}]]</b>
+				</div>
+         	</div>		
+		</div>
+	</body>
+	
+</html>
+	

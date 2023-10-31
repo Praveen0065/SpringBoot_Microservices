@@ -1,0 +1,4 @@
+my.db.driver=Oracle
+my.db.url= jdbc-oracle
+my.db.user= praveen1
+my.db.pwd= raghu1

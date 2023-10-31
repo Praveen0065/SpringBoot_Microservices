@@ -1,0 +1,40 @@
+package com.app.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
+
+import com.app.entity.User;
+import com.app.repository.UserRepository;
+
+@Service
+public class UserService {
+	
+    @Autowired
+	private UserRepository repo;
+    
+    public Integer saveUser(User user) {
+      return repo.save(user).getId();
+    }
+    
+    @Cacheable(value = "users", key = "userId")
+    public User getOneUser(Integer id) {
+    	return repo.findById(id).get();
+    }
+    
+    @CachePut(value = "users", key = "userId")
+    public void saveUse(Integer userid,User user) {
+    	User userDb = repo.findById(userid).get();
+    	userDb.setName(user.getName());
+		userDb.setRole(user.getRole());
+		repo.save(userDb);
+    }
+    
+    @CacheEvict(value = "users", allEntries = true)
+    public void deleteUser(Integer userId) {
+		repo.deleteById(userId);
+	}
+
+}

@@ -1,0 +1,5 @@
+# this is sample properties file
+my.db.driver = OracleDriver
+my.db-url = jdbc:oracle:thin:sample
+my.db_user =abcd
+my.db-psd =praveen

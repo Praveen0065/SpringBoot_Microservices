@@ -1,0 +1,44 @@
+package com.app.runner;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import com.app.entity.Student;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+@Component
+public class TestProducerRunner implements CommandLineRunner {
+
+	
+	public void run(String... args) throws Exception {
+		
+		//1. Create Web client object using base URL
+		WebClient client = WebClient.create("http://localhost:9090/student");
+		
+		/*
+		//2. Call : HttpMethod + PATH + Body + Parameters + execute + store Response
+		Mono<Student> result =	
+		client
+		.post() // Http Method
+		.uri("/create") // PATH
+		.body(Mono.just( new Student("AA256","PRAVEEN",300.2)), Student.class) //Body
+		.retrieve() // Execute
+		.bodyToMono(Student.class); // convert response */
+		
+		System.out.println("FROM CONSUMER-------->");
+		
+		// access result
+	//	result.subscribe(System.out::println);
+		
+		System.out.println("FROM CONSUMER-------->");
+		
+		Flux<Student> flux = client.get().uri("/fetchAll").retrieve().bodyToFlux(Student.class);
+		flux.doOnNext(System.out::println).blockFirst();
+		
+
+	}
+
+}

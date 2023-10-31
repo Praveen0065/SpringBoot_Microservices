@@ -1,0 +1,25 @@
+package com.app;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+@Component
+public class TestDataRunner2 implements CommandLineRunner {
+	
+	@Autowired
+	private Process1 pob;
+
+	@Override
+	public void run(String... args) throws Exception {
+		
+		pob.setCode("AA");
+		pob.setPort(852);
+		System.out.println(pob);
+		
+		System.out.println(pob.getCode());
+		System.out.println(pob.getPort());
+
+	}
+
+}

@@ -1,0 +1,6 @@
+my:
+  db:
+    driver: MySQL
+    pwd: raghu1
+    url: jdbc-mysql
+    user: praveen1

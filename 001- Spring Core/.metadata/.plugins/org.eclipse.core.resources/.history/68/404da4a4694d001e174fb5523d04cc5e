@@ -1,0 +1,27 @@
+package com.app;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Format {
+	
+	@Qualifier("ProcessImpl")
+	@Autowired
+	private IProcess pob;
+	
+	//@Autowired(required = false)
+	
+	
+	public void printFormat() {
+		pob.getProcesCode();
+		System.out.println("FORM FORMAT");
+	}
+
+	@Override
+	public String toString() {
+		return "Format [pob=" + pob + "]";
+	}
+
+}

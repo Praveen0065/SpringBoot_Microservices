@@ -1,0 +1,30 @@
+package com.app.test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.app.config.AppConfig;
+import com.app.service.Token;
+import com.app.service.TokenService;
+
+public class MainTest {
+	
+	public static void main(String[] args) {
+		
+		// Reading first time
+		ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+		TokenService t1 = ac.getBean("tokenService", TokenService.class);
+		Token tk1 = t1.getToken();
+		System.out.println(t1.hashCode() + " " + tk1.hashCode());
+		
+		// Reading first time
+
+		TokenService ts1 = ac.getBean("tokenService", TokenService.class);
+		Token tks1 = ts1.getToken();
+		System.out.println(ts1.hashCode() + " " + tks1.hashCode());
+		
+		
+		
+	}
+
+}

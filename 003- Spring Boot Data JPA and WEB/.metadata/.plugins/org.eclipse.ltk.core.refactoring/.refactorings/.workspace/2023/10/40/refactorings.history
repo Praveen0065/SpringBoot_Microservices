@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;21-SpringBootWebAppThymeleaf-1&apos; to &apos;22-SpringBootWebAppThymeleaf-1&apos;" description="Rename resource &apos;21-SpringBootWebAppThymeleaf-1&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/21-SpringBootWebAppThymeleaf-1" name="22-SpringBootWebAppThymeleaf-1" stamp="1696315194359" updateReferences="true"/>
+</session>

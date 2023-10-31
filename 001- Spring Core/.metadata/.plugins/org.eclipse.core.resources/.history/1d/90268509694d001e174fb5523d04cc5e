@@ -1,0 +1,11 @@
+package com.app;
+
+public class AdvProcessImpl implements IProcess {
+
+	@Override
+	public void getProcesCode() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

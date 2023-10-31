@@ -1,0 +1,12 @@
+package com.app;
+
+public class Process {
+	
+	private String code;
+	private int port;
+	private boolean exist;
+	
+
+	
+
+}

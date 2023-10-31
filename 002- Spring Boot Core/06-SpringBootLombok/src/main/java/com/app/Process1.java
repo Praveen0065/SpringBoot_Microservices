@@ -1,0 +1,16 @@
+package com.app;
+
+import lombok.Data;
+
+@Data
+public class Process1 {
+	
+	private String code;
+	private int port;
+	
+
+	
+
+	
+
+}

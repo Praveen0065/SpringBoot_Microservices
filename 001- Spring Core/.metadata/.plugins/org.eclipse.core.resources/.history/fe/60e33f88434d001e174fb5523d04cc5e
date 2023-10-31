@@ -1,0 +1,16 @@
+package com.app;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class MyService {
+	
+	@Autowired
+	private MyRepository repo;
+
+	@Override
+	public String toString() {
+		return "MyService [repo=" + repo + "]";
+	}
+	
+
+}

@@ -1,0 +1,16 @@
+package com.app;
+
+import java.util.Date;
+
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ProductReportService2 {
+	
+	@Scheduled(fixedDelay = 2000) // in milli sec   //1000 = 1sec
+	public void generateReport() {
+		System.out.println("HELLO : " + new Date());
+	}
+
+}

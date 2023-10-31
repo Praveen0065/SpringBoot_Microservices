@@ -1,0 +1,23 @@
+package com.app;
+
+import java.util.Date;
+
+/*
+      cron = SEC   MIN    HRS   DAY   MONTH   WEEKDAY
+      0-59  0-59   0-23  1-31   1-12     SUN-SAN 1-7 / 0-7
+ */
+
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ProductReportService2 {
+	
+	//@Scheduled(fixedDelay = 2000) // in milli sec   //1000 Msec = 1sec
+	//@Scheduled(fixedRate = 2000)
+	@Scheduled(cron = "10 * * * * *")  //=> execute task on Every minute, 10th sec  
+	public void generateReport() {
+		System.out.println("HELLO : " + new Date());
+	}
+
+}

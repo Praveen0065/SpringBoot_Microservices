@@ -1,0 +1,11 @@
+package com.app;
+
+public class ProcessImpl implements IProcess {
+    
+	@Override
+	public void getProcessCode() {
+		
+
+	}
+
+}

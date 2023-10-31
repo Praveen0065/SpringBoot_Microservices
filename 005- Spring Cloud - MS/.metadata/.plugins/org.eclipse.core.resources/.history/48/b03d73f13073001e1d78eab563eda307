@@ -1,0 +1,22 @@
+
+#PORT
+server.port=9094
+
+#Provide (application name)
+spring.application.name=ORDER-SERVICE
+
+
+#Provide eureka location
+#eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+
+#Link with config server
+spring.config.import=optional:configserver:http://localhost:8888
+
+# Active Acutuator
+#management.endpoints.web.exposure.include=* #for all services 
+#management.endpoints.web.exposure.include=health,beans,env
+
+#Connect with Admin server
+#spring.boot.admin.client.url=http://localhost:9999
+
+

@@ -1,0 +1,50 @@
+package com.app.rest;
+
+import java.util.List;
+
+import org.apache.catalina.connector.Response;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.app.entity.Student;
+import com.app.service.IStudentService;
+
+@RestController
+@RequestMapping("/v1/api/student")
+public class StudentController {
+	
+	@Autowired
+	private IStudentService service;
+	
+	//1. create one student
+	@PostMapping("/create")
+	public ResponseEntity<String> createStudent(
+			   @RequestBody Student stud
+			   )
+	{
+	   Integer	id = service.saveStudent(stud);
+	   String message = "STUDENT"+id+ "CREATED";
+	   return new ResponseEntity<>(message,HttpStatus.CREATED);
+	}
+	
+	//2. fetch all students
+	@GetMapping("/all")
+	public ResponseEntity<List<Student>> getAllStudnts(){
+		List<Student> list = service.getAllStundents();
+	   // return new ResponseEntity<List<Student>>(list,HttpStatus.OK);
+		return ResponseEntity.ok(list);		 
+		
+	}
+	
+	
+	//3. fetch one by id
+	//4. remove one by id
+	//5. update student
+
+}

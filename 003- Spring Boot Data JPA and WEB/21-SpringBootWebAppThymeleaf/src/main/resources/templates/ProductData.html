@@ -1,0 +1,22 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<title> WEB APP </title>
+		 <!--To link a CSS File -->
+		<link rel="stylesheet" th:href="@{/mycss/design.css}"><link>
+		 <!--To link a JS File -->
+		<script type="text/javascript" th:src="@{/myjs/setup.js}"  ></script>
+		
+	</head>
+	<body>
+		 <!--To Display image -->
+	    <img th:src="@{/images/doctor.png}" width="100" height="150"/>
+		<h2> WELCOME TO SPRING BOOT + THYMELEAF EXAMPLE </h2>
+		<p class="mydesign"> SAMPLE CSS </p>
+		
+		 <!--To Read and print Model Data -->
+		<p> This is product code <span th:text="${prodCode}"></span> </p>
+		<p> This is product code [[${prodCode}]] </p>
+	</body>
+	
+</html>
+	

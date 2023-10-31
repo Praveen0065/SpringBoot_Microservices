@@ -1,0 +1,11 @@
+
+my.app.id =20
+my.app.code = MODEL
+
+my.app.data[0]=A
+my.app.data[1]=B
+my.app.data[2]=C
+#my.app.data=A,B,C
+
+my.app.info.C1=M1
+my.app.info.C2=M2

@@ -1,0 +1,6 @@
+my:
+  db:
+    driver: Postgress
+    pwd: raghu
+    url: jdbc-PSG
+    user: praveen

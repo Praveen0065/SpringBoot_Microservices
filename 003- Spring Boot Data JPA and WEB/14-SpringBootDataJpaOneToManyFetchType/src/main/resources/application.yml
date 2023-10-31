@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    password: Pra0065
+    url: jdbc:mysql://localhost:3306/sbms
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
