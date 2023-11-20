@@ -1,0 +1,36 @@
+package com.app.serviceImpl;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.entity1.User;
+import com.app.repository2.UserRepository;
+import com.app.service3.IUserService;
+
+@Service
+public class UserServiceImpl implements IUserService {
+	
+	@Autowired
+	private UserRepository repo;
+
+	public Integer saveUser(User user) {
+		return repo.save(user).getUserId();
+		 
+	}
+
+	
+	public Optional<User> getOneUser(Integer id) {
+		
+		return repo.findById(id);
+	}
+
+
+
+
+
+
+
+
+}

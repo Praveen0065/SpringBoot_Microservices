@@ -1,0 +1,63 @@
+package com.app.config2;
+
+import javax.sql.DataSource;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+	
+	// password encoder
+	@Bean
+	public BCryptPasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+	
+	
+	//2. Authorization
+	@Bean
+	public SecurityFilterChain configAuth(HttpSecurity http) throws Exception {
+		http.authorizeHttpRequests(request -> request.antMatchers("/home","/").permitAll()
+				.antMatchers("/admin").hasAuthority("ADMIN")
+				.antMatchers("/customer").hasAuthority("CUSTOMER")
+				.anyRequest().authenticated()
+				)
+		.formLogin(
+				form -> form.loginPage("/login").permitAll()
+				.defaultSuccessUrl("/hello",true)
+				)
+		.logout(logout->logout.permitAll());
+		
+		return http.build();
+		
+	}
+	
+	
+	
+	
+	
+	//1. Authentication
+	@Bean
+	public UserDetailsService userDet(DataSource data) {
+		UserDetails user1 = User.withUsername("sam").password("$2a$10$3NYlpTKCWMXB/ozEgd2nE.Ts1TfIgvpTKTjKUscHqCD1Ed4Mf7NQK").authorities("ADMIN").build();
+		UserDetails user2 = User.withUsername("ram").password("$2a$10$Be1FiCogyuhe.xWOxnHkze3Fb1jGjxGKKGCS1zR0CX7MXSWVNC4KO").authorities("CUSTOMER").build();
+		
+		
+		JdbcUserDetailsManager users = new JdbcUserDetailsManager(data);
+		users.createUser(user1);
+		users.createUser(user2);
+		
+		return users;
+	}
+
+}

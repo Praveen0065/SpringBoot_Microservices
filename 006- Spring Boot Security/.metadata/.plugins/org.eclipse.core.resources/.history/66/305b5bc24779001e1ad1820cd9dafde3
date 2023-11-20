@@ -1,0 +1,5 @@
+package com.app.service5.Impl;
+
+public class UserServiceImpl {
+
+}

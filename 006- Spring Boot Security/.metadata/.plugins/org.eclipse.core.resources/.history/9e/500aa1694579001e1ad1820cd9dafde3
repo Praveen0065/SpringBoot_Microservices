@@ -1,0 +1,5 @@
+package com.app.repo3;
+
+public interface UserRepository {
+
+}

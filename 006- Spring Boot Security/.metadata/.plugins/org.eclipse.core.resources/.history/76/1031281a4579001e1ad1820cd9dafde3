@@ -1,0 +1,5 @@
+package com.app.payload2;
+
+public class UserRequest {
+
+}

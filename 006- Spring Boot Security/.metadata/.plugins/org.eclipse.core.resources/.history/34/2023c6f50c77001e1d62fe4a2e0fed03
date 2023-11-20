@@ -1,0 +1,42 @@
+package com.app.config2;
+
+import javax.sql.DataSource;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+	
+	
+	//2. Authorization
+	@Bean
+	public SecurityFilterChain configAuth(HttpSecurity http) {
+		return null;
+	}
+	
+	
+	
+	
+	
+	//1. Authentication
+	@Bean
+	public UserDetailsService userDet(DataSource data) {
+		UserDetails user1 = User.withUsername("sam").password("").authorities("ADMIN").build();
+		UserDetails user2 = User.withUsername("ram").password("$2a$10$Be1FiCogyuhe.xWOxnHkze3Fb1jGjxGKKGCS1zR0CX7MXSWVNC4KO\r\n"
+				+ "").authorities("CUSTOMER").build();
+		
+		
+		JdbcUserDetailsManager users = new JdbcUserDetailsManager(data);
+		return null;
+	}
+
+}

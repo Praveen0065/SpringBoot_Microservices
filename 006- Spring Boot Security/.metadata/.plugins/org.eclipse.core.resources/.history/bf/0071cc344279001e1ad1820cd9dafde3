@@ -1,0 +1,28 @@
+package com.app;
+
+import java.sql.Date;
+import java.util.concurrent.TimeUnit;
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		String secret = "TestAppOneSample";
+		
+		String token =
+		 Jwts.builder()
+		.setId("85274196") // user UnqId
+		.setSubject("Sample") //userName
+		.setIssuedAt(new Date(System.currentTimeMillis())) //created time
+		.setExpiration(new Date(System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(2))) //exp time
+		.setIssuer("PRAVEEN") //token provider name
+		.signWith(SignatureAlgorithm.HS256, secret.getBytes()) //sec algo, secret
+		.compact();
+		
+		System.out.println(token);
+		
+	}
+
+}

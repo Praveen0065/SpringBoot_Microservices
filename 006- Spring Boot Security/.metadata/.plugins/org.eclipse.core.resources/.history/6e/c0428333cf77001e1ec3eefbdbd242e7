@@ -1,0 +1,46 @@
+package com.app.entity;
+
+import java.util.Set;
+
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Entity
+@Table(name = "User_Tab")
+public class User {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "uid")
+	private Integer userId;
+	
+	@Column(name = "uname")
+	private String userName;
+	
+	@Column(name = "uemail")
+	private String userEmail;
+	
+	@Column(name = "upassword")
+	private String userPwd;
+	
+	@ElementCollection
+	@CollectionTable(name = "User_Roles",
+	joinColumns = @JoinColumn(name = "uid"))
+	@Column(name = "urole")
+	private Set<String> userRoles;
+
+}

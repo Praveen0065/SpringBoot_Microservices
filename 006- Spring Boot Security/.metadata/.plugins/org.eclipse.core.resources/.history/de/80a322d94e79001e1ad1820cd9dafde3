@@ -1,0 +1,42 @@
+package com.app.service5.Impl;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.app.entity1.User;
+import com.app.repo3.UserRepository;
+import com.app.service4.IUserService;
+
+@Service
+public class UserServiceImpl implements IUserService {
+
+	@Autowired
+	private UserRepository repo;
+	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+	
+	
+	public Integer saveUser(User user) {
+		String pwd = encoder.encode(user.getPassword());
+		user.setPassword(pwd);
+	 return	repo.save(user).getId();
+	}
+
+
+	public User findbyUser(String userName) {
+	  Optional<User> opt = repo.findByUserName(userName);
+	  if(opt.isPresent()) {
+		  return opt.get();
+	  }
+		return null;
+	}
+
+
+
+	
+
+}

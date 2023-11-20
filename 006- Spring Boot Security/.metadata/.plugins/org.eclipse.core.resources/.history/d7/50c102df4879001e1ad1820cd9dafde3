@@ -1,0 +1,5 @@
+package com.app.rest6;
+
+public class UserRestController {
+
+}

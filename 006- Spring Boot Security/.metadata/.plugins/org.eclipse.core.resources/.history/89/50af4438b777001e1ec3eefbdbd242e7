@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title> WELCOME TO SECURITY USING ORM </title>
+	</head>
+	<body>
+		<h3> WELCOME TO REGISTER PAGE </h3>
+		
+	   	<form>
+		 	NAME     : <input type="text" name=""/>
+		 	EMAIL    : <input type="text" name=""/>
+		 	PASSWORD : <input type="text" name=""/>
+		 	ROLES    :
+		 	 <input type="radio" name="" value=""/>
+		 	 <input type="radio" name="" value=""/>
+		 	 <input type="submit" value="Create User"/>
+		</form>
+		<div>[[${Message}]]</div>
+	</body>
+	
+	
+</html>

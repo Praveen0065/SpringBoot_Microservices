@@ -1,0 +1,27 @@
+package com.app.service5.Impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.entity1.User;
+import com.app.repo3.UserRepository;
+import com.app.service4.IUserService;
+
+@Service
+public class UserServiceImpl implements IUserService {
+
+	@Autowired
+	private UserRepository repo;
+	
+	
+	public Integer saveUser(User user) {
+	 return	repo.save(user).getId();
+	}
+
+
+	public User findbyUser(String userName) {
+		
+		return null;
+	}
+
+}

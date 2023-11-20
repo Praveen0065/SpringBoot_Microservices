@@ -1,0 +1,17 @@
+package com.app;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Component;
+
+@Component
+public class passwordEncoder implements CommandLineRunner {
+
+	public void run(String... args) throws Exception {
+		BCryptPasswordEncoder en = new BCryptPasswordEncoder();
+		String pwd = en.encode("ram");
+		System.out.println(pwd);
+		
+	}
+
+}

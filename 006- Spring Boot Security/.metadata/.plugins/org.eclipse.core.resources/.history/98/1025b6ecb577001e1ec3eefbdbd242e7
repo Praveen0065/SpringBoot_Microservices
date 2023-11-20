@@ -1,0 +1,23 @@
+package com.app.restController;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.app.entity.User;
+import com.app.service.IUserService;
+
+@Controller
+@RequestMapping("/user")
+public class UserController {
+	
+	@Autowired
+	private IUserService service;
+	
+	//1. show register page
+	public String showReg() {
+		return "userRegister";
+	}
+
+
+}
